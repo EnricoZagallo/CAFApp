@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   ActivityIndicator,
   Alert,
+  Image,
   KeyboardAvoidingView,
   Modal,
   Platform,
@@ -14,6 +15,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+
 import { useAuth } from "../../src/contexts/AuthContext";
 
 const COLORS = {
@@ -156,13 +158,14 @@ export default function LoginScreen() {
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
-          {/* BRASÃO */}
+          {/* ── BRASÃO / LOGO ── */}
           <View style={styles.logoArea}>
-            <View style={styles.logoBadge}>
-              <Text style={styles.logoCAF}>CAF</Text>
-              <Text style={styles.logoClub}>CLUB</Text>
-            </View>
-            <Text style={styles.logoTitulo}>Clube Automóveis de Ferro</Text>
+            <Image
+              source={require("../../assets/images/logo.png")}
+              style={styles.logoImagem}
+              resizeMode="contain"
+            />
+            <Text style={styles.logoTitulo}>Clube Antigos do Farol</Text>
             <Text style={styles.logoSubtitulo}>Bem-vindo de volta!</Text>
           </View>
 
@@ -270,7 +273,6 @@ export default function LoginScreen() {
 
           {/* CARRO DECORATIVO */}
           <View style={styles.carArea}>
-            <Text style={styles.carEmoji}>🚗</Text>
             <View style={styles.carLine} />
           </View>
         </ScrollView>
@@ -690,5 +692,10 @@ const styles = StyleSheet.create({
   modalCancelarText: {
     color: COLORS.gray,
     fontSize: 14,
+  },
+  logoImagem: {
+    width: 120,
+    height: 120,
+    marginBottom: 14,
   },
 });
