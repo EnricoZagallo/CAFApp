@@ -34,7 +34,6 @@ const CATEGORIAS = [
   "Geral",
   "Exposição",
   "Encontro",
-  "Rally",
   "Reunião",
   "Confraternização",
 ];
